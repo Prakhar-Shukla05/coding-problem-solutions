@@ -1,6 +1,6 @@
 package tree;
 
-public class KthSmallestElement {
+public class KthSmallestElementInABST {
     
 	 public static int kthSmallest(TreeNode root, int k) {
 	        

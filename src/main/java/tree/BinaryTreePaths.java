@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
+
+//Leetcode 
+//Problem link - https://leetcode.com/problems/binary-tree-paths/
 public class BinaryTreePaths {
 
 //  Slower Solution using DFS
@@ -42,8 +45,9 @@ public class BinaryTreePaths {
 		List<String> result = new ArrayList<>();
         if(root==null)
      	   return result;
+    	
 		StringBuilder sb = new StringBuilder();
-		Stack<java.util.Map.Entry<TreeNode, Integer>> stack = new Stack<>();
+		Stack<Map.Entry<TreeNode, Integer>> stack = new Stack<>();
 		stack.push(new java.util.AbstractMap.SimpleEntry<>(root, 0));
 		while (!stack.isEmpty()) {
 			Map.Entry<TreeNode, Integer> curKvp = stack.pop();
