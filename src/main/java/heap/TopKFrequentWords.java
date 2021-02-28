@@ -1,4 +1,4 @@
-package amazon;
+package heap;
 
 import java.util.ArrayList;
 import java.util.Collections;
