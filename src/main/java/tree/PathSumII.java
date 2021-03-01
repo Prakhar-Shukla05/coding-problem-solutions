@@ -14,6 +14,19 @@ public class PathSumII {
 	
 	private void buildPath(TreeNode root, int targetSum, List<Integer> current, List<List<Integer>> paths) {
 		
+		if(root==null)
+			return ;
+		
+		current.add(root.val);
+		
+		if(targetSum-root.val==0 && root.left==null && root.right==null) {
+			paths.add(current);
+			return ;
+			
+		}
+		
+		buildPath(root.left,targetSum-root.val,new ArrayList<>(current), paths);
+		buildPath(root.right,targetSum-root.val,new ArrayList<>(current), paths);
 	}
 
 	public static void main(String[] args) {
