@@ -19,10 +19,7 @@ public class LongestIncreasingPath {
 		return maxPath;
 	}
 	
-	private static boolean isValid(int i, int j, int row, int col) {
-		
-		return i>=0 && i<row && j>=0 && j<col;
-	}
+	
 	private static int dfs(int x, int y, int [] [] matrix, int prev) {
 		
 		//if(!isValid(x,y,matrix.length,matrix[0].length))
