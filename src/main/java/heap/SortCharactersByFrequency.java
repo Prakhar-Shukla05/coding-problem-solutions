@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 public class SortCharactersByFrequency {
 	public String frequencySort(String s) {
-           HashMap<Character,Integer> map= new HashMap();
+           HashMap<Character,Integer> map= new HashMap<>();
            char [] ca= s.toCharArray();
            for(char c: ca) {
         	   map.put(c, map.getOrDefault(c, 0)+1);
