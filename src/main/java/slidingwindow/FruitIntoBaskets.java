@@ -22,7 +22,8 @@ public class FruitIntoBaskets {
 	    	if(map.size()<=2) {
 	    		map.put(tree[j],j++);
 	    	}
-	    	if(map.size()>2){
+	    	if(map.size()>2)
+	    	{
 	    		int min=tree.length-1;
 	    		for(int x: map.values()) {
 	    			min=Math.min(min, x);
