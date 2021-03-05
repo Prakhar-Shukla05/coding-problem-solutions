@@ -19,7 +19,7 @@ public class KnapSack01RecursiveWithMemoization {
 
 	private static int knapSackRecursiveWithMemoization(int W, int[] wt, int[] val, int n) {
 
-		if (n == 0 || n == 0)
+		if (n == 0 || W == 0)
 			return 0;
 
 		if (t[n][W] != -1) {

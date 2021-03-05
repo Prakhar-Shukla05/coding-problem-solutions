@@ -7,7 +7,7 @@ public class KnapSack01Recursive {
 
 	 static int knapSack(int W, int wt[], int val[], int n) 
 	    { 
-		      if(n==0 || n==0)
+		      if(n==0 || W==0)
 		    	  return 0;
 		      
 		      if(wt[n-1]<=W) {

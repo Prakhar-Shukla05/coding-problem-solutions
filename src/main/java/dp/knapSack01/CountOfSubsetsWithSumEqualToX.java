@@ -1,5 +1,6 @@
 package dp.knapSack01;
 
+//Problem link- https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/
 public class CountOfSubsetsWithSumEqualToX {
 
 	private static int countOfSubsets(int [] arr, int X) {
