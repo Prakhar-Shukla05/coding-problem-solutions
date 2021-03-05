@@ -1,4 +1,4 @@
-package dp;
+package dp.miscellaneous;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

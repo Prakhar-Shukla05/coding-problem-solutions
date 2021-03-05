@@ -1,4 +1,4 @@
-package dp;
+package dp.miscellaneous;
 
 public class MinimumPathSum {
 
