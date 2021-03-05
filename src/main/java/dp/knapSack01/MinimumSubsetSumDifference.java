@@ -31,7 +31,7 @@ public class MinimumSubsetSumDifference {
 		return minDifference;
 	}
 
-	private boolean hasSubsetSum(int target, int[] arr, int n, boolean[][] dp) {
+	private void hasSubsetSum(int target, int[] arr, int n, boolean[][] dp) {
 
 		// boolean [][] dp= new boolean [n+1][target+1];
 		for (int i = 0; i <= n; i++) {
@@ -52,7 +52,7 @@ public class MinimumSubsetSumDifference {
 			}
 		}
 
-		return dp[n][target];
+		
 
 	}
 
