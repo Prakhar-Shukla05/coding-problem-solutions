@@ -34,7 +34,8 @@ public class TargetSum {
 		}
 		if((S+sum)%2!=0)
 			return 0;
-		
+		if(S>sum)
+			return 0;
 		
 
 		int number = subsets(nums, (S + sum) / 2);
