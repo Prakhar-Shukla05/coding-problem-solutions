@@ -23,36 +23,17 @@ public class BestTimeToBuyAndSellStock {
           if(prices==null || prices.length==0) {
         	  return 0;
           }
-          int n=prices.length;
-          int [] lr= new int [n];
-          Stack<Integer> st= new Stack<>();
-          for(int i=n-1;i>=0;i--) {
-        	  if(st.isEmpty()) {
-        		  lr[i]=-1;
-        	  }
-        	  
-        	  else {
-        		  if(st.peek()>prices[i])
-        		  lr[i]=st.peek();
-        	  
-              if(!st.isEmpty() && prices[i]>st.peek()) {
-            	  while(!st.isEmpty() && st.peek()<prices[i])
-            		  st.pop();
-            	  if(st.isEmpty())
-            		  lr[i]=-1;
-            	  st.push(prices[i]);
-              }
-        	  
-          }
-          }
-          
+          int minLeft=Integer.MAX_VALUE;
           int maxProfit=0;
-          for(int i=0;i<n;i++) {
-        	  if(lr[i]!=-1) {
-        		  maxProfit= Math.max(maxProfit, lr[i]-prices[i]);
+          for(int i=0;i<prices.length;i++) {
+        	  if(minLeft>prices[i])
+        		  minLeft=prices[i];
+        	  else {
+        		  maxProfit=Math.max(maxProfit, prices[i]-minLeft);
         	  }
           }
           return maxProfit;
+          
 	}
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package recursion;
+ package recursion;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -226,10 +226,10 @@ class OutputWriter
 
 class IOUtils
 	{
-		public static int[] readIntArray(InputReader in, int size)
+		public static int[] readIntArray(InputReader in, int n)
 		{
-          int[] array = new int[size];
-          for (int i = 0; i < size; i++)
+          int[] array = new int[n];
+          for (int i = 0; i < n; i++)
               array[i] = in.readInt();
           return array;
 		}
