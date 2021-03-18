@@ -1,4 +1,4 @@
-	package dp.lcs;
+package dp.lcs;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -23,44 +23,43 @@ import java.util.InputMismatchException;
 //length 3.
 
 public class LongestCommonSubsequenceRecursive {
-	
-	private static int lcs(int p, int q, String s1, String s2){
-	        
-		 if( s1== null || s1.length()==0 || s2==null || s2.length()==0)
-			 return 0;
-		 
-		 int lcs=lcsRecursive(s1,s2,p,q);
-	     return lcs;
+
+	private static int lcs(int p, int q, String s1, String s2) {
+
+		if (s1 == null || s1.length() == 0 || s2 == null || s2.length() == 0)
+			return 0;
+
+		int lcs = lcsRecursive(s1, s2, p, q);
+		return lcs;
 	}
-	 
-	 private static int lcsRecursive(String x, String y, int m, int n) {
-		 
-		 if(m==0 || n==0 )
-			 return 0;
-		 
-		 if(x.charAt(m-1)==y.charAt(n-1))
-		 {
-			 return 1+ lcsRecursive(x, y, m-1, n-1);
-		 }
-		 else {
-			 return Math.max(lcsRecursive(x, y, m, n-1), lcsRecursive(x, y, m-1, n));
-		 }
-	 }
+
+	private static int lcsRecursive(String x, String y, int m, int n) {
+
+		if (m == 0 || n == 0)
+			return 0;
+
+		if (x.charAt(m - 1) == y.charAt(n - 1)) {
+			return 1 + lcsRecursive(x, y, m - 1, n - 1);
+		} else {
+			return Math.max(lcsRecursive(x, y, m, n - 1), lcsRecursive(x, y, m - 1, n));
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		InputReader in = new InputReader(System.in);
-		OutputWriter out = new OutputWriter(System.out) ;
-		int p=in.readInt();
-		int q= in.readInt();
-		String s1=in.readString();
-		String s2=in.readString();
+		OutputWriter out = new OutputWriter(System.out);
+		int p = in.readInt();
+		int q = in.readInt();
+		String s1 = in.readString();
+		String s2 = in.readString();
 		out.printLine(lcs(p, q, s1, s2));
 		out.close();
-		
+
 	}
 
 }
+
 class InputReader {
 	private InputStream stream;
 	private byte[] buf = new byte[1024];

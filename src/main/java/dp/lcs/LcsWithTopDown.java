@@ -1,7 +1,5 @@
 package dp.lcs;
 
-import java.util.Arrays;
-
 //GeeksforGeeks
 //Problem link - https://practice.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1#
 //Given two sequences, find the length of longest subsequence present in both of them.
@@ -22,9 +20,6 @@ public class LcsWithTopDown {
 		if (s1 == null || s1.length() == 0 || s2 == null || s2.length() == 0)
 			return 0;
 		int[][] dp = new int[p + 1][q + 1];
-		/*
-		 * for(int [] row : dp) { Arrays.fill(row, -1); }
-		 */
 		int lcs = lcsWithTopDownDP(s1, s2, p, q, dp);
 		return lcs;
 	}
@@ -42,9 +37,9 @@ public class LcsWithTopDown {
 			for (int j = 1; j <= n; j++) {
 
 				if (x.charAt(i - 1) == y.charAt(j - 1)) {
-					 dp[i][j] = 1 + dp[i-1][j-1];
+					dp[i][j] = 1 + dp[i - 1][j - 1];
 				} else {
-					 dp[i][j] = Math.max(dp[i][j-1],dp[i-1][j]);
+					dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j]);
 				}
 			}
 		}
