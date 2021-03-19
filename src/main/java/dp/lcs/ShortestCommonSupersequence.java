@@ -15,7 +15,7 @@ public class ShortestCommonSupersequence {
 			return 0;
 		int[][] dp = new int[p + 1][q + 1];
 		int lcs = lcsWithTopDownDP(s1, s2, p, q, dp);
-		return s1.length()+s2.length()-lcs;
+		return p+q - lcs;
 	}
 
 	private static int lcsWithTopDownDP(String x, String y, int m, int n, int[][] dp) {
@@ -47,7 +47,7 @@ public class ShortestCommonSupersequence {
 		int q = in.readInt();
 		String s1 = in.readString();
 		String s2 = in.readString();
-		out.printLine(shortestCommonSupersequence(s1, s2,p,q));
+		out.printLine(shortestCommonSupersequence(s1, s2, p, q));
 		out.close();
 	}
 
