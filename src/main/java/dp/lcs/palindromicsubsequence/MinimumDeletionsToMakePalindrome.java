@@ -3,12 +3,24 @@ package dp.lcs.palindromicsubsequence;
 import utility.InputReader;
 import utility.OutputWriter;
 
-//GeeksforGeeks
-//Problem link- https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/
-//Given a sequence, find the length of the longest palindromic subsequence in it.
+//Geeks for Geeks
+//Problem link- https://practice.geeksforgeeks.org/problems/minimum-deletitions1648/1
+//Given a string of S as input. Your task is to write a program to remove or delete
+//the minimum number of characters from the string so that the resultant string is a palindrome.
+//Input: S = "aebcbda"
+//Output: 2
+//Explanation: Remove characters 'e' 
+//and 'd'.
+public class MinimumDeletionsToMakePalindrome {
 
-public class LPS {
-
+	static int minimumNumberOfDeletions(String S)
+    {
+		if (S == null || S.length() == 0 )
+			return 0;
+        int lps= lps(S);
+        return S.length()-lps;
+    }
+	
 	private static int lps(String s1) {
 
 		if (s1 == null || s1.length() == 0 )
@@ -49,12 +61,8 @@ public class LPS {
 		//int q = in.readInt();
 		String s1 = in.readString();
 		//String s2 = in.readString();
-		out.printLine(lps(s1));
+		out.printLine(minimumNumberOfDeletions(s1));
 		out.close();
 
 	}
-
 }
-
-
-
