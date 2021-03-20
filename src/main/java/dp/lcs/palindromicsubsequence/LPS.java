@@ -17,7 +17,7 @@ public class LPS {
 		String s2= new StringBuilder(s1).reverse().toString();
 		int lcs = lcsWithTopDownDP(s1, s2, s1.length(),s2.length() , dp);
 		return lcs;
-	}
+	}	
 
 	private static int lcsWithTopDownDP(String x, String y, int m, int n, int[][] dp) {
 
