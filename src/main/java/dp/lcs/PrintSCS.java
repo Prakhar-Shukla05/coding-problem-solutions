@@ -19,13 +19,13 @@ package dp.lcs;
 
 public class PrintSCS {
 
-	private static String printScs(String s1, String s2) {
+	private static String printScs(String str1, String str2) {
 
-		if (s1 == null || s1.length() == 0 || s2 == null || s2.length() == 0)
+		if (str1 == null || str1.length() == 0 || str2 == null || str2.length() == 0)
 			return "";
-		int[][] dp = new int[s1.length() + 1][s2.length() + 1];
-		String lcs = printScsWithTopDownDP(s1, s2, s1.length(), s2.length(), dp);
-		return lcs;
+		int[][] dp = new int[str1.length() + 1][str2.length() + 1];
+		String scs = printScsWithTopDownDP(str1, str2, str1.length(), str2.length(), dp);
+		return scs;
 	}
 
 	private static String printScsWithTopDownDP(String x, String y, int m, int n, int[][] dp) {
@@ -59,27 +59,32 @@ public class PrintSCS {
 			}
 			else {
 				if(dp[i][j-1]>=dp[i-1][j]) {
-					sb.append(x.charAt(i-1));
-					i--;
+					j--;
 					
 				}
 				else if(dp[i-1][j]>dp[i][j-1]) {
-					
-					sb.append(y.charAt(j-1));
-					j--;
+				    i--;
 				}
 			}
 		}
-		while(i>0) {
-			sb.append(x.charAt(i));
-			i--;
-		}
-		while(j>0) {
-			sb.append(y.charAt(j));
-			j--;
-		}
 		
-        return sb.reverse().toString();
+		
+        String lcs= sb.reverse().toString();
+        StringBuilder scs= new StringBuilder();
+        int first=0;
+        int second=0;
+        for(char c: lcs.toCharArray()) {
+        	while(x.charAt(first)!=c)
+        		scs.append(x.charAt(first++));
+        	while(y.charAt(second)!=c)
+        		scs.append(y.charAt(second++));
+        	
+        	scs.append(c);
+        	first++;
+        	second++;
+        }
+        scs.append((x.substring(first))+(y.substring(second)));
+        return scs.toString();
 	}
 	
 	public static void main(String[] args) {

@@ -14,13 +14,17 @@ import java.util.Map;
 //Output: 2
 //Explanation: The optimal solution is to remove the last two elements to reduce x to zero.
 
+
+//Will give TLE with DP.
+//Use sliding window appoach
 public class MinimumOperationstoReduceXtoZero {
 	
-	public static final int INFINITY= Integer.MAX_VALUE-20000;
+	public static int INFINITY= Integer.MAX_VALUE-20000;
 	public static Map<String,Integer> mem= new HashMap<>();
 	
 	public int minOperations(int[] nums, int x) {
-              
+            mem.clear();
+            INFINITY= Integer.MAX_VALUE-20000;
 	       if(nums==null || nums.length==0)
 	    	   return 0;
 	       
