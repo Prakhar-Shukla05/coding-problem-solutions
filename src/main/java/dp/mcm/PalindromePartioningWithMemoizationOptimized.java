@@ -18,6 +18,7 @@ import utility.OutputWriter;
 //are "a", "babbbab", "b", "ababa".
 
 public class PalindromePartioningWithMemoizationOptimized {
+	private static long startTime= System.currentTimeMillis();
 	private static int solve(String s, int i, int j, int[][] dp, int[][] pal) {
 
 		if (dp[i][j] != -1)
@@ -39,8 +40,9 @@ public class PalindromePartioningWithMemoizationOptimized {
 
 		int min = Integer.MAX_VALUE;
 		for (int k = i; k < j; k++) {
-			int temp = (dp[i][k] == -1 ? solve(s, i, k, dp, pal) : dp[i][k])
-					+ (dp[k + 1][j] == -1 ? solve(s, k + 1, j, dp, pal) : dp[k + 1][j]) + 1;
+			int left=(dp[i][k] == -1 ? solve(s, i, k, dp, pal) : dp[i][k]);
+			int right=(dp[k + 1][j] == -1 ? solve(s, k + 1, j, dp, pal) : dp[k + 1][j]);
+			int temp = left+right + 1;
 			if (temp < min)
 				min = temp;
 		}
@@ -60,25 +62,29 @@ public class PalindromePartioningWithMemoizationOptimized {
 		return true;
 	}
 
-	static int palindromicPartition(String str) {
+	static int palindromicPartition(String s) {
 
-		if (str == null || str.length() == 0)
+		if (s == null || s.length() == 0)
 			return 0;
-		int[][] dp = new int[str.length()][str.length()];
+		int[][] dp = new int[s.length()+1][s.length()+1];
 		for (int[] rows : dp)
 			Arrays.fill(rows, -1);
-		int[][] pal = new int[str.length()][str.length()];
+		int[][] pal = new int[s.length()+1][s.length()+1];
 		for (int[] rows : pal)
 			Arrays.fill(rows, -1);
-		return solve(str, 0, str.length() - 1, dp, pal);
+		return solve(s, 0, s.length() - 1, dp, pal);
 	}
 
 	public static void main(String[] args) {
 
+		
 		InputReader in = new InputReader(System.in);
 		OutputWriter out = new OutputWriter(System.out);
 		String str = in.readString();
-		out.print(palindromicPartition(str));
+		out.printLine(str.length());
+		out.printLine(palindromicPartition(str));
+		long endTime= System.currentTimeMillis();
+		out.printLine("It took " + (endTime - startTime) + " milliseconds");
 		out.close();
 	}
 }
