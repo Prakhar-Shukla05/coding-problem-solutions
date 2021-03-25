@@ -81,6 +81,7 @@ public class PalindromePartioningWithMemoizationOptimized {
 		InputReader in = new InputReader(System.in);
 		OutputWriter out = new OutputWriter(System.out);
 		String str = in.readString();
+		long startTime= System.currentTimeMillis();
 		out.printLine(str.length());
 		out.printLine(palindromicPartition(str));
 		long endTime= System.currentTimeMillis();
