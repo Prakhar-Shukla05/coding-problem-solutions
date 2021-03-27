@@ -1,5 +1,6 @@
 package graph;
 
+import utility.*;
 public class UnreachableNodesWithAdjacencyMatrix {
 
 	private static void dfs(int s, int[][] adj, boolean[] visited, int n) {
