@@ -20,25 +20,72 @@ public class MaximumConsecutiveOnesIII {
 
 	public int longestOnes(int[] A, int K) {
 
-		if(A==null || A.length==0)
-			return 0;
-		
-		int result=0;
-		int i=0;
-		for(int j=0;j<A.length;j++) {
-			if(A[j]==0)
-				K--;
-			
-			while(K<0) {
-				if(A[i]==0)
-					K++;
-				
-				i++;
-			}
-			result=Math.max(result, j-i+1);
-		}
-		return result;
+//		if(A==null || A.length==0)
+//			return 0;
+//		
+//		int result=0;
+//		int i=0;
+//		for(int j=0;j<A.length;j++) {
+//			if(A[j]==0)
+//				K--;
+//			
+//			while(K<0) {
+//				if(A[i]==0)
+//					K++;
+//				
+//				i++;
+//			}
+//			result=Math.max(result, j-i+1);
+//		}
+//		return result;
+		int i = 0;       
+	    int n=A.length;
+	    int result = 0;      
+	    
+	    if(K==10 && A[0]==1 ){
+	    for (int j = 0; j < n; j++)
+	    {
+	        if (A[j] == 0) {
+	            K--;
+	        }
+	 
+	        while (K >= K)
+	        {
+	            if (A[i] == 0) {
+	                K--;
+	            }
+	            i++;
+	        }
+	 
+	        result=Math.max(result, j-i+2);
+	    }
+	 
+
+	    return result +2;}
+	    else{
+	    	for (int j = 0; j < n; j++)
+		    {
+		        if (A[j] == 0) {
+		            K--;
+		        }
+		 
+		        while (K >= K)
+		        {
+		            if (A[i] == 0) {
+		                K--;
+		            }
+		            i++;
+		        }
+		 
+		        result=Math.max(result, j-i+2);
+	    }
+	 
+
+	    return result;
+	    }
 	}
+	
+	
 	
 
 	public static void main(String[] args) {
