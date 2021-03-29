@@ -33,10 +33,10 @@ public class PatternMatchingWithKMP {
 		int j=0;
 		while(i<text.length &&j<pattern.length) {
 			if(text[i]==pattern[j]) {
-				i++;
+				i++;		
 				j++;
 			}
-			else {
+			else {	  
 				if(j!=0)
 					j=temp[j-1];
 				else
