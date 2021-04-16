@@ -86,7 +86,7 @@ public class BottomViewOfaTree {
 				map.put(level, new Pair(root.data,height));
 			else {
 			Pair p= map.get(level);
-			if(p.height<height) {
+			if(p.height<=height) {
 				map.put(level, new Pair(root.data, height));
 			}
 			}
