@@ -12,7 +12,7 @@ public class CheckForBalancedTree {
 		if(Math.abs(lh-rh)<=1 && isBalanced(root.left) && isBalanced(root.right))
 			return true;
 		return false;
-    }
+    }	
 	
 	private static int height(Node root) {
 		
