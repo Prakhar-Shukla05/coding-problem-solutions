@@ -22,10 +22,10 @@ import java.util.ArrayList;
 
 public class DiagonalTraversalOfBinaryTree {
 
-	public ArrayList<Integer> diagonal(TreeNode root)
+	/*public ArrayList<Integer> diagonal(TreeNode root)
     {
 		
-    }
+    }*/
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
