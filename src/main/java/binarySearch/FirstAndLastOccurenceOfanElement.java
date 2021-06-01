@@ -57,6 +57,6 @@ public class FirstAndLastOccurenceOfanElement {
           long [] arr = { 1, 3, 5, 5, 5, 5, 67, 123, 125 };
           int n=9;
           int x=5;
-          System.out.println(new FirstAndLastOccurenceOfanElement().find(arr, n, x));
+          System.out.println(new FirstAndLastOccurenceOfanElement().find(arr, n, x));	
 	}
 }
