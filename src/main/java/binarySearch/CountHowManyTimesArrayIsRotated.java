@@ -42,7 +42,7 @@ public class CountHowManyTimesArrayIsRotated {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-       int [] arr = {2,3,4,5,1};
+       int [] arr = {1,2,3,4,5};
        int n=5;
        System.out.println(new CountHowManyTimesArrayIsRotated().findKRotation(arr, n));
 	}
