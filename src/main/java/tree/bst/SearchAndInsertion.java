@@ -1,5 +1,6 @@
 package tree.bst;
 
+import java.util.*;
 public class SearchAndInsertion {
 	
 	class Node {
@@ -37,6 +38,7 @@ public class SearchAndInsertion {
 	
 	private Node insert(Node x) {
 		return insert(x,root);
+		
 	}
 	
 	private Node insert(Node x, Node root) {
