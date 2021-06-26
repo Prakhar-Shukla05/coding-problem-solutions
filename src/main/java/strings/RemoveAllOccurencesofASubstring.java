@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.Stack;
+
 //Leetcode 1910
 //Problem link- https://leetcode.com/contest/biweekly-contest-55/problems/remove-all-occurrences-of-a-substring/
 //Given two strings s and part, perform the following operation on s until all occurrences of the substring part are removed:
@@ -34,15 +36,44 @@ package strings;
 public class RemoveAllOccurencesofASubstring {
 
 	public static String removeOccurrences(String s, String part) {
-             
+          
 		if(part==null || part.length()==0 || part.length()>s.length())
 			return s;
 		
+		/* First apporach
 		while(s.contains(part)) {
 			 s= s.replace(part, "");
 		}
 		return s;
+		*/
 		
+		//Second apporach
+		//Whenever we have to remove some part and concatenate the rest, there is a good chance stack will be involved.
+		
+		Stack<Character> st= new Stack<>();
+		StringBuilder toCheck= new StringBuilder();
+		for(char c : s.toCharArray()) {
+			st.push(c);
+			if(st.size()>=part.length()) {
+				int size=part.length();
+				//int index=size-1;
+				while(size-->0) {
+					toCheck.append(st.pop());
+				}
+				if(!toCheck.reverse().toString().equals(part)) {
+					 size=part.length();
+					  for(int i= 0;i<toCheck.length();i++) {
+						  st.push(toCheck.charAt(i));
+					  }
+				}
+				toCheck= new StringBuilder();
+			}
+		}
+		toCheck=new StringBuilder();
+		for(char c : st) {
+			toCheck.append(c);
+		}
+		return toCheck.toString();
 	}
 
 	public static void main(String[] args) {
