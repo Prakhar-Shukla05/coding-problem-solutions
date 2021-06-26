@@ -30,7 +30,8 @@ public class DiameterOfABinaryTree {
 		int l= solve(root.left);
 		int r= solve(root.right);
 		int temp= Math.max(l, r)+1;	
-		result= Math.max(1+l+r,result);
+		int ans= Math.max(temp, 1+l+r);
+		result= Math.max(ans,result);
 		return temp;
 	}
 	public static void main(String[] args) {

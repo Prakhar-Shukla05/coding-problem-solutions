@@ -3,20 +3,7 @@ package tree.bst;
 import java.util.*;
 public class SearchAndInsertion {
 	
-	class Node {
-		int val;
-		Node left;
-		Node right;
-		
-		public Node(int val) {
-			this.val = val;
-			this.left=null;
-			this.right=null;
-			
-		}
-		
-		
-	}
+	
 	
 	
 	
@@ -27,10 +14,10 @@ public class SearchAndInsertion {
 		return search(x,root);
 	}
 	private boolean search(Node x,Node root) {
-		if(x.val==root.val)
+		if(x.data==root.data)
 			return true;
 		
-		if(x.val<root.val)
+		if(x.data<root.data)
 			return search(x,root.left);
 		else
 			return search(x,root.right);
@@ -44,11 +31,11 @@ public class SearchAndInsertion {
 	private Node insert(Node x, Node root) {
 	            
 		if(root==null) {
-			root = new Node(x.val);
+			root = new Node(x.data);
 			return root;
 		}
 		
-		if(x.val<=root.val) {
+		if(x.data<=root.data) {
 			root.left= insert(x,root.left);
 		}
 		else
@@ -62,4 +49,19 @@ public class SearchAndInsertion {
 
 	}
 
+}
+
+class Node {
+	int data;
+	Node left;
+	Node right;
+	
+	public Node(int val) {
+		this.data = val;
+		this.left=null;
+		this.right=null;
+		
+	}
+	
+	
 }
