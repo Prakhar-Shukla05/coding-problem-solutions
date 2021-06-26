@@ -33,7 +33,7 @@ package arrays;
 
 public class MonotonicArray {
 
-	public boolean isMonotonic(int[] nums) {
+	public static boolean isMonotonic(int[] nums) {
 
 		boolean isIncreading=true;
 		boolean isDecreaing=true;
@@ -48,6 +48,8 @@ public class MonotonicArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		int [] nums= {1,2,3,4,7};
+		System.out.println(isMonotonic(nums));
 
 	}
 
