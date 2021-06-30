@@ -35,19 +35,19 @@ public class CycleDetectionUndirectedUsingBFS {
 	public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
 		
 		boolean [] visited = new boolean[V];
-		int [] parent= new int[V];
-		Arrays.fill(parent, -1);
+		//int [] parent= new int[V];
+		//Arrays.fill(parent, -1);
 		
 		for(int i=0;i<V;i++) {
 			if(!visited[i]) {
-				if(checkCycleUsingBFS(i,adj,visited,parent))
+				if(checkCycleUsingBFS(i,adj,visited))
 					return true;
 			}
 		}
 		return false;
 	}
 	
-	private boolean checkCycleUsingBFS(int current, ArrayList<ArrayList<Integer>> adj, boolean[] visited, int [] parent) {
+	private boolean checkCycleUsingBFS(int current, ArrayList<ArrayList<Integer>> adj, boolean[] visited) {
 		
 		Queue<Node> q = new LinkedList<>();
 		visited[current]=true;
@@ -60,7 +60,7 @@ public class CycleDetectionUndirectedUsingBFS {
 			for(Integer it : adj.get(top.val)) {
 				if(!visited[it]) {
 					q.add(new Node(it, val));
-					parent[it]=val;
+					//parent[it]=val;
 					visited[it]=true;
 				}
 				else if(par!=it) {
