@@ -30,7 +30,7 @@ import java.util.Queue;
 //You dont need to read or print anything. Your task is to complete the function isCycle() which takes V denoting the number of vertices and adjacency list 
 //as input parameters and returns a boolean value denoting if the undirected graph contains any cycle or not.
 
-public class CycleDetectionUndirectedUsingBFS {
+public class CycleDetectionInUndirectedUsingBFS {
 
 	public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
 		
@@ -94,7 +94,7 @@ public class CycleDetectionUndirectedUsingBFS {
 	                adj.get(v).add(u);
 	            }
 	            
-	            CycleDetectionUndirectedUsingBFS cyc=  new CycleDetectionUndirectedUsingBFS();
+	            CycleDetectionInUndirectedUsingBFS cyc=  new CycleDetectionInUndirectedUsingBFS();
 	            System.out.println(cyc.isCycle(V, adj));
 	        }
 
