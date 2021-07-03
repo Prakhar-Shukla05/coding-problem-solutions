@@ -1,4 +1,4 @@
-package graph;
+package graph.algorithms;
 
 import utility.*;
 public class UnreachableNodesWithAdjacencyMatrix {
