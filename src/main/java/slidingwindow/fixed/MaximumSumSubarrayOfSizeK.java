@@ -26,12 +26,6 @@ public class MaximumSumSubarrayOfSizeK {
 		if(K>N)
 			return 0;
 		
-		if(K==N) {
-			int ans=0;
-			for(int i : Arr)
-				ans+=i;
-			return ans;
-		}
 		int sum=0;
 		int max=Integer.MIN_VALUE;
 		int i=0;
@@ -56,7 +50,7 @@ public class MaximumSumSubarrayOfSizeK {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int N=4;
-		int K=2;
+		int K=4;
 		 ArrayList<Integer> Arr= new ArrayList<Integer>();
 		 Arr.add(100);
 		 Arr.add(200);
