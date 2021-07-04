@@ -72,7 +72,7 @@ public class CourseSchedule {
 				if(checkCycleWithDFS(it, adj, visited, dfsVisited))
 					return true;
 			}
-			else if(dfsVisited[i])
+			else if(dfsVisited[it])
 				return true;
 		}
 		
