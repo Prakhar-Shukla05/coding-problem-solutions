@@ -14,7 +14,7 @@ public class DijkstraAlgorithmforShortestPathInUndirected {
 		
 		PriorityQueue<DijkstraNode> pq= new PriorityQueue<DijkstraNode>(N,new DijkstraNode());
 		pq.add(new DijkstraNode(s, 0));
-		
+		distance[s]=0;
 		while(!pq.isEmpty()) {
 			DijkstraNode node = pq.poll();
 			
