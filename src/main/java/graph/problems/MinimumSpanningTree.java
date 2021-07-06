@@ -10,6 +10,9 @@ import java.util.PriorityQueue;
 //Given a weighted, undirected and connected graph of V vertices and E edges. 
 //The task is to find the sum of weights of the edges of the Minimum Spanning Tree.
 
+//This is solved using Prims Algorithm
+//It can also be solved by using Krushkals Algorithm
+
 public class MinimumSpanningTree {
 
 	class Node implements Comparator<Node>{
@@ -52,7 +55,7 @@ public class MinimumSpanningTree {
 		}
 		
 	}
-	static int spanningTree(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj) 
+    int spanningTree(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj) 
     {
         int [] key= new int [V];
         boolean [] mst= new boolean[V];
