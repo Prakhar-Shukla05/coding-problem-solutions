@@ -104,7 +104,7 @@ public class KrushKalsAlgorithm {
 
 		
 			
-			KruskalAlgo(adj, n, obj);
+			obj.KruskalAlgo(adj, n, obj);
 	}
 
 }
