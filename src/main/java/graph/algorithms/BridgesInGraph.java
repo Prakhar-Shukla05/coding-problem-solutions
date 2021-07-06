@@ -2,6 +2,17 @@ package graph.algorithms;
 
 import java.util.ArrayList;
 
+//An edge in an undirected connected graph is a bridge iff removing it disconnects
+//the graph. For a disconnected undirected graph, definition is similar, a bridge 
+//is an edge removing which increases number of disconnected components.
+//
+//We do DFS traversal of the given graph. In DFS tree an edge (u, v) 
+//(u is parent of v in DFS tree) is bridge if there does not exist any other 
+//alternative to reach u or an ancestor of u from subtree rooted with v. As 
+//discussed in the previous post, the value low[v] indicates earliest visited 
+//vertex reachable from subtree rooted with v. The condition for an edge (u, v) 
+//to be a bridge is, “low[v] > disc[u]”.
+
 public class BridgesInGraph {
 
 	void printBridges(ArrayList<ArrayList<Integer>> adj, int n)
