@@ -32,11 +32,35 @@ public class MaxRibbonCut {
 		int a=in.readInt();
 		int b=in.readInt();
 		int c=in.readInt();
-		out.print(solveUsingRecursion(n,a,b,c,dp));
+		out.printLine(solveUsingTopDownDP(n,a,b,c,dp));
+		out.printLine(solveUsingBottomUpDP(n,a,b,c));
 		out.close();
 	}
 
-	private static int solveUsingRecursion(int n, int a, int b, int c, int[] dp) {
+	private static int solveUsingBottomUpDP(int n, int a, int b, int c) {
+		// TODO Auto-generated method stub
+		
+		int [] dp= new int[n+1];
+		dp[0]=0;
+		
+		for(int i=1;i<=n;i++) {
+			int cuta=Integer.MIN_VALUE;
+			int cutb=Integer.MIN_VALUE;
+			int cutc=Integer.MIN_VALUE;
+			
+			if(i>=a)
+				cuta=dp[i-a];
+			if(i>=b)
+				cutb=dp[i-b];
+			if(i>=c)
+			    cutc=dp[i-c];
+			
+			dp[i]=1+Math.max(cuta, Math.max(cutb, cutc));
+		}
+		return dp[n];
+	}
+
+	private static int solveUsingTopDownDP(int n, int a, int b, int c, int[] dp) {
 		// TODO Auto-generated method stub
 		if(n==0)
 			return 0;
@@ -46,7 +70,7 @@ public class MaxRibbonCut {
 		
 		if(dp[n]!=-1)
 			return dp[n];
-		return dp[n]=1 + Math.max(solveUsingRecursion(n-a, a, b, c, dp), Math.max(solveUsingRecursion(n-b, a, b, c, dp), solveUsingRecursion(n-c, a, b, c, dp)));
+		return dp[n]=1 + Math.max(solveUsingTopDownDP(n-a, a, b, c, dp), Math.max(solveUsingTopDownDP(n-b, a, b, c, dp), solveUsingTopDownDP(n-c, a, b, c, dp)));
 	}
 
 }
