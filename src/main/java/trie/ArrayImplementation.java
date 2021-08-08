@@ -27,7 +27,7 @@ class Trie {
     /** Returns if the word is in the trie. */
     public boolean search(String word) {
         Node ret= getNode(word);
-        return ret!=null && ret.isWord==true;
+        return ret!=null && ret.isWord;
     }
     
     /** Returns if there is any word in the trie that starts with the given prefix. */

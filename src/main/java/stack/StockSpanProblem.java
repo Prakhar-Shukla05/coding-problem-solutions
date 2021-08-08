@@ -10,22 +10,34 @@ public class StockSpanProblem {
 		Stack<Pair> st= new Stack<>();
 		for(int i=0;i<n;i++) {
 			
-			if(st.isEmpty()) {
-				res[i]=-1;
-			}
-			else if(!st.isEmpty() && st.peek().val>price[i])
-			     res[i]=st.peek().index;
+//			if(st.isEmpty()) {
+//				res[i]=-1;
+//			}
+//			else if(!st.isEmpty() && st.peek().val>price[i])
+//			     res[i]=st.peek().index;
+//			
+//			else if(!st.isEmpty() && st.peek().val<=price[i]) {
+//				while(!st.isEmpty() && st.peek().val<=price[i])
+//					st.pop();
+//				
+//				if(st.isEmpty())
+//					res[i]=-1;
+//				else
+//					res[i]=st.peek().index;
+//					
+//			}
 			
-			else if(!st.isEmpty() && st.peek().val<=price[i]) {
-				while(!st.isEmpty() && st.peek().val<=price[i])
-					st.pop();
-				
-				if(st.isEmpty())
-					res[i]=-1;
-				else
-					res[i]=st.peek().index;
-					
+			while(!st.isEmpty() && st.peek().val<=price[i]) {
+				st.pop();
 			}
+			if(st.isEmpty())
+				res[i]=-1;
+			else {
+				if(st.peek().val>=price[i])
+					res[i]=st.peek().index;
+				
+			}
+			
 			st.push(new Pair(price[i],i));
 		}
 		
