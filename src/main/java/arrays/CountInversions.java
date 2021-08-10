@@ -1,6 +1,5 @@
 package arrays;
 
-import tree.InvertABinaryTree;
 
 //GFG
 //Problem link-https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1

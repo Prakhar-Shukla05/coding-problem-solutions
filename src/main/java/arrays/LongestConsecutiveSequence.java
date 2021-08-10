@@ -46,7 +46,7 @@ public class LongestConsecutiveSequence {
 
 	//Using HashSet. Time Complexity -O(n)
 	//Enter all the elements in a set
-	//then iterate throigh the array again and if the num-1 is present then continue
+	//then iterate through the array again and if the num-1 is present then continue
 	// the goal is to find the lowest element in the consecutive order and from there finding the sequence
 	public int longestConsecutive(int[] nums) {
 		 
