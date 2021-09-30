@@ -65,7 +65,7 @@ public class FourSum {
 	}
 	
 	public static void main(String[] args) {
-		int [] nums= {2,2,2,2,2};
+		int [] nums= {2,2,2,5,1};
 		int target=8;
 		List<List<Integer>> ans= new FourSum().fourSum(nums, target);
 		for(List<Integer> l : ans) {
