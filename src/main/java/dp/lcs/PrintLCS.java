@@ -4,7 +4,7 @@ package dp.lcs;
 //Problemlink- https://www.geeksforgeeks.org/printing-longest-common-subsequence/
 //Given two sequences, print the longest subsequence present in both of them.
 //Example:
-//LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3. 
+//LCS for input Sequences ABCDGH and AEDFHR is ADH of length 3.
 
 public class PrintLCS {
 	

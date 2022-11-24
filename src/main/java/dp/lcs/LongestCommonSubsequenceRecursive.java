@@ -20,7 +20,7 @@ import java.util.InputMismatchException;
 //str2 = AEDFHR
 //Output: 3
 //Explanation: LCS for input Sequences
-//“ABCDGH” and “AEDFHR” is “ADH” of
+//ABCDGH and AEDFHR is ADH of
 //length 3.
 
 public class LongestCommonSubsequenceRecursive {

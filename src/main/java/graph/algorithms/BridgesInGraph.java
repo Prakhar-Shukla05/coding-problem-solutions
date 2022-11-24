@@ -11,7 +11,6 @@ import java.util.ArrayList;
 //alternative to reach u or an ancestor of u from subtree rooted with v. As 
 //discussed in the previous post, the value low[v] indicates earliest visited 
 //vertex reachable from subtree rooted with v. The condition for an edge (u, v) 
-//to be a bridge is, “low[v] > disc[u]”.
 
 public class BridgesInGraph {
 

@@ -14,9 +14,9 @@ package tree.bst;
 //Output: 1 
 //Explanation: 
 //The left subtree of root node contains node 
-//with key lesser than the root node’s key and 
+//with key lesser than the root nodes key and
 //the right subtree of root node contains node 
-//with key greater than the root node’s key.
+//with key greater than the root nodes key.
 //Hence, the tree is a BST.
 public class CheckForBST {
 

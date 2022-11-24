@@ -18,7 +18,6 @@ import java.util.LinkedList;
 //The array A is [1 3 -1 -3 5 3 6 7], and B is 3.
 //
 //Window position	Max
-//———————————-	————————-
 //[1  3  -1] -3  5  3  6  7	3
 //1 [3  -1  -3] 5  3  6  7	3
 //1  3 [-1  -3  5] 3  6  7	5

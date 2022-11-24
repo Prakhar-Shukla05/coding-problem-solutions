@@ -12,7 +12,7 @@ import java.util.Arrays;
 //str2 = AEDFHR
 //Output: 3
 //Explanation: LCS for input Sequences
-//“ABCDGH” and “AEDFHR” is “ADH” of
+//ABCDGH and AEDFHR is ï¿½ADHï¿½ of
 //length 3.
 
 public class LongestCommonSubsequenceWithMemoization {
